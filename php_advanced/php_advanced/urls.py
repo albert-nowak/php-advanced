@@ -20,5 +20,6 @@ from example import views as example_views
 
 urlpatterns = [
     path('hello/', example_views.hello_world),
+    path('hello/<str:name>/', example_views.hello_name),
     path('admin/', admin.site.urls),
 ]
