@@ -1,7 +1,12 @@
-<h1>Python Has Power App</h1>
-<h2>List of Gifts list {{ gfl_entries|length }}</h2>
-<ul>
-    {% for gfl in gfl_entries %}
-        <li>{{ gfl.name|upper }} - {{ gfl.modified|date:'Y-m-d' }}</li>
-    {% endfor %}
-</ul>
+{% load bootstrap4 %}
+{% bootstrap_css %}
+
+<div class="container">
+    <h1 class="text-center">Python Has Power App</h1>
+    <h3>List of Gift List ({{ gfl_entries|length }})</h3>
+    <ul class="list-group">
+        {% for gfl in gfl_entries %}
+            <li class="list-group-item">{{ gfl.name }} - {{ gfl.modified|date:'Y-m-d' }}</li>
+        {% endfor %}
+    </ul>
+</div>
