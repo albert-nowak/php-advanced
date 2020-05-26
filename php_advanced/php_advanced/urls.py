@@ -21,6 +21,8 @@ from example import views as example_views
 urlpatterns = [
     path('hello/', example_views.hello_world),
     path('hello/<str:name>/', example_views.hello_name),
-    path('gift_list_view/', example_views.GiftListListView.as_view()),
+    path('gift_list_view/', example_views.GiftListListView.as_view(), name='list_gfl'),
+    path('gift_list/add/', example_views.PostCreateView.as_view(), name='add_gfl'),
+    path('gift_list/edit/<int:pk>/', example_views.PostEditView.as_view(), name='edit_gfl'),
     path('admin/', admin.site.urls),
 ]
